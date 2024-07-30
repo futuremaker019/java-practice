@@ -25,18 +25,24 @@ public class Day08 {
     }
 
     public static boolean solution(String s) {
-
         /**
          * 스택을 구현해서 값을 넣고 ")"이거 젤 처음에 들어오면 return false 치면 되지 않을까 싶다
          * 2개의 스택을 만들어 하나는 '(', 다른 하나는 ')' 를 stack에서 peek 해서 하나의 괄호를 만들어주면 될듯
          */
         char[] chars = s.toCharArray();
         Stack<Character> stack = new Stack<>();
-
-        for(int i = 0; i < chars.length; i++){
+        for (int i = 0; i < chars.length; i++) {
+            if (stack.isEmpty()) {
+                stack.push(chars[i]);
+                continue;
+            }
+            if (stack.peek() == '(' && chars[i] == ')') {
+                stack.pop();
+            } else {
+                stack.push(chars[i]);
+            }
         }
         return stack.isEmpty();
-
     }
 
 }
