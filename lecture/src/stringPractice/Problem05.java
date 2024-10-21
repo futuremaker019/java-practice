@@ -2,6 +2,7 @@ package stringPractice;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Problem05 {
@@ -10,11 +11,10 @@ public class Problem05 {
         특정 문자 뒤집기
      */
     public static void main(String[] args) {
-        String solution = solution("a#b!GE*T@S");
-        System.out.println("solution = " + solution);
-
-        String solution2 = solution2("a#b!GE*T@S");
-        System.out.println("solution2 = " + solution2);
+        Scanner sc = new Scanner(System.in);
+        String value = sc.next();
+        String solution = solution(value);
+        System.out.println(solution);
     }
 
     public static String solution(String str) {
